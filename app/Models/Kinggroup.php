@@ -9,6 +9,21 @@ class Kinggroup extends Model
 {
     
     use HasFactory;
+    public function seervices(): BelongsTo{
+        return $this->BelongsTo(Seervice::class);
+    }
+    public function products(): BelongsTo{
+        return $this->BelongsTo(Product::class);
+    }
+    public function abouts(): BelongsTo{
+        return $this->BelongsTo(About::class);
+    }
+    public function teams(): BelongsTo{
+        return $this->BelongsTo(Team::class);
+    }
+    public function contacts(): BelongsTo{
+        return $this->BelongsTo(Contact::class);
+    }
 }
 //   public function aroots(): HasMany
 //     {

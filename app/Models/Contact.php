@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Contact extends Model
 {
     use HasFactory;
+    public function kinggroups(): HasMany{
+        return $this->hasMany(Kinggroup::class);
+    }
 }

@@ -4,10 +4,12 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
-class productController extends Controller
+class ProductController extends Controller
 {
     public function index(){
-        return view('frontend/about')
+        $products=Product::skip(0)->take(6)->get();
+        return view('frontend.product',compact('products'));
     }
 }
